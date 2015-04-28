@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles/my_style.css">
+	</head>
+	<body>
+		<script src="scripts/jquery-1.6.2.min.js"></script>
+		<script>
+			//$(document).ready(function(){
+				
+					
+				$.say = function(what) { alert('I Say ' + what); }
+				//jQuery.sayWhat = function(what) { alert('I Say ' + what); }
+				//$.noConflict()
+				//$.say("ho");
+				//$.sayWhat("ho1");
+				
+				(function($) {
+				    $.say = function(what) { alert('I Say ' + what); }
+				})(jQuery);
+				
+				
+				//$.noConflict();
+				
+				$.say("ho");
+				//jQuery.say("ho!ho!");
+				
+				
+				
+			
+ 				/* (function ($) {
+				    $.sum = function(array) {
+				        var total = 0;
+				        $.each(array, function(index, value) {
+				        value = $.trim(value);
+				        value = parseFloat(value) || 0;
+
+				        total += value;
+				    });
+				    return tatal;
+				    
+				};
+				})(jQuery);
+
+				(function ($) {
+				    $.average = function(array) {
+				        if($.isArray(array)) {
+				            return $.sum(array) / array.length;
+				        }
+				        return '';
+				    };
+				})(jQuery);
+				
+				jQuery.sum('1','2');
+				alert(total); */
+				
+		</script>
+	</body>
+</html>

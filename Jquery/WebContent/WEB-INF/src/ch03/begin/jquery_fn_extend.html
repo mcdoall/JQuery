@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>extend test</title>
+	</head> 
+	<body>
+		<button id=”btn01″>disable/enable</button><p/>
+		<button id=”btn01disable”>disable</button><p/>
+		<button id=”btn01enable”>enable</button><p/>		
+		<script src="scripts/jquery-1.6.2.min.js"></script>
+		
+		
+
+		<script type=”text/javascript”>
+		
+
+		jQuery.fn.extend({
+		//버튼비활성화
+		btnDisable : function(){
+		return this.each(function(){
+		alert(‘btnDisable’);
+		jQuery(this).attr(“disabled”,true);
+		});
+		},
+		//버튼활성화
+		btnEnable : function(){
+		return this.each(function(){
+		alert(‘btnEnable’);
+		jQuery(this).attr(“disabled”,false);
+		});
+		}
+		});
+
+		jQuery(function($){
+		$(“#btn01disable”).click(
+		function(){$(“#btn01″).btnDisable()}
+		);
+		$(“#btn01enable”).click(
+		function(){$(“#btn01″).btnEnable()}
+		);
+		});
+ 		
+		
+
+		</script>
+		
+	</body>
+</html>

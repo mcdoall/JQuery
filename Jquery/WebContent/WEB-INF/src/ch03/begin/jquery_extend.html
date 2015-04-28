@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>extend test</title>
+	</head> 
+	<body>		
+		<script src="scripts/jquery-1.6.2.min.js"></script>
+		<script>
+		var artist = {  
+				name: 'Serge Gainsbourg',
+				tags: ['french', 'chanson francaise', 'chanson'],
+				similar: {
+					name: 'Jane Birkin'
+				}
+			};
+			var myShallow = {};				// 빈 객체 myShallow
+			$.extend(myShallow, artist);	// shallow copy, myShallow 객체는 artist 객체의 프로퍼티들을 가지게 됩니다.
+			myShallow.tags.push('pop');		// tags 프로퍼티에 'pop' 이라는 항목을 추가하면
+			//console.log(myShallow.tags);	// 확장한 객체 myShallow.tags 에도 추가가 되고
+			//console.log(artist.tags);		// 원본 객체 artist.tags 에도 추가가 되어 있습니다.
+			 
+			var myDeep = {};				// 빈 객체 myDeep
+			$.extend(true, myDeep, artist);	// deep copy, myDeep 객체는 artist 객체의 프로퍼티들을 가지게 됩니다.
+			myDeep.tags.push('french pop');	// tags 프로퍼티에 'french pop' 이라는 항목을 추가하면
+			//console.log(myDeep.tags);		// 확장한 객체 myDeep.tags 에는 추가가 되어 있지만
+			//console.log(artist.tags);		// 원본 객체 artist.tags 에도 추가가 되어 있지 않습니다.
+			
+			////shallow copy
+			var obj = {		// obj라는 객체를 하나 만듭니다.
+					prop: 'value'
+				}
+				 
+				var obj2 = obj;		// obj 객체를 obj2에 할당합니다.
+									// obj2는 obj의 프로퍼티를 그대로 가지는 객체가 되는데
+									// 바로 이것이 shallow copy 입니다.
+				 
+				//console.log(obj2.prop);		// 'value'
+				obj2.prop = 'new value';	// 복사한 객체의 프로퍼티 값을 변경합니다.
+				 
+				//console.log(obj.prop);		// 'new value'
+											// 원본 객체의 프로퍼티 값이 변경되어 있습니다.
+											// 복사한 객체를 수정하면 원본 객체도 수정됩니다.
+											
+		    ////deep copy
+		    var obj = {		// obj라는 객체를 하나 만듭니다.
+					prop: 'value'
+				}
+				 
+				var obj2 = {};		// obj2 객체를 만듭니다.
+				 
+				for (var i in obj) {	// for in 문을 사용하여 obj 객체 안의 프로퍼티를 하나씩 꺼냅니다.
+					obj2[i] = obj[i];	// obj2 객체에 obj 객체가 가지고 있는 프로퍼티를 만들고
+										// 프로퍼티 값도 원본 객체인 obj 객체와 같은 값으로 할당합니다.
+				}
+				 
+				console.log(obj2.prop);		// 'value'
+				obj2.prop = 'new value';	// 복사한 객체의 프로퍼티 값을 변경합니다.
+				 
+				console.log(obj.prop);		// 'value'
+											// 복사한 객체 obj2의 프로퍼티 값을 변경해도 원본 객체의
+											// 프로퍼티 값은 그대로 유지됩니다.
+											// 이 것이 deep copy 입니다.
+				console.log(obj2.prop);
+			
+		</script>
+	</body>
+</html>
