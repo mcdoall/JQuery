@@ -7,30 +7,30 @@
 		
 		<script language="Javascript">
 		
-		// 기명 함수표현식(named function expression) 
+		// 湲곕챸 �븿�닔�몴�쁽�떇(named function expression) 
 		var company = function company() {
-		    /* 실행코드 */
+		    /* �떎�뻾肄붾뱶 */
 		}; 
 		 
-		// 익명 함수표현식(anonymous function expression)
+		// �씡紐� �븿�닔�몴�쁽�떇(anonymous function expression)
 		var company = function() {
-		    /* 실행코드 */
+		    /* �떎�뻾肄붾뱶 */
 		};
 		 
-		// 기명 즉시실행함수(named immediately-invoked function expression)
+		// 湲곕챸 利됱떆�떎�뻾�븿�닔(named immediately-invoked function expression)
 		(function company() {
-		    /* 실행코드 */
+		    /* �떎�뻾肄붾뱶 */
 		}());
 		 
-		// 익명 즉시실행함수(immediately-invoked function expression)
-		// Javascript 대가이신 더글라스 클락포트의 권장 표기법
+		// �씡紐� 利됱떆�떎�뻾�븿�닔(immediately-invoked function expression)
+		// Javascript ��媛��씠�떊 �뜑湲��씪�뒪 �겢�씫�룷�듃�쓽 沅뚯옣 �몴湲곕쾿
 		(function() {
-		    /* 실행코드 */
+		    /* �떎�뻾肄붾뱶 */
 		}());
 		 
-		// 익명 즉시실행함수(immediately-invoked function expression)
+		// �씡紐� 利됱떆�떎�뻾�븿�닔(immediately-invoked function expression)
 		(function() {
-		    /* 실행코드 */
+		    /* �떎�뻾肄붾뱶 */
 		})();
 		
 		
@@ -38,19 +38,19 @@
 		
 		
 		var app = function() {
-		    console.log('call function'); // "함수 호출" 출력
+		    console.log('call function'); // "�븿�닔 �샇異�" 異쒕젰
 		};
 		app();
 		
 		(function() {
-		    console.log('call function 2'); // "함수 호출" 출력
+		    console.log('call function 2'); // "�븿�닔 �샇異�" 異쒕젰
 		}());
 		
 		
 		var carName="tico";
 		
 		var buyCar = function(carName) {
-		    // "내가 구매한 차는 sonata입니다." 출력
+		    // "�궡媛� 援щℓ�븳 李⑤뒗 sonata�엯�땲�떎." 異쒕젰
 		    console.log('I buy ' + carName);
 		};
 		//buyCar('sonata');
@@ -59,7 +59,7 @@
 		var carName="sonata";
 		
 		var sellCar = function(carName) {
-		    // "내가 구매한 차는 sonata입니다." 출력
+		    // "�궡媛� 援щℓ�븳 李⑤뒗 sonata�엯�땲�떎." 異쒕젰
 		    console.log('I Sell ' + carName);
 		};
 		//buyCar('sonata');
@@ -67,7 +67,7 @@
 		
 		
 		var whatsMyCar = function(carName) {
-		    // "내가 구매한 차는 sonata입니다." 출력
+		    // "�궡媛� 援щℓ�븳 李⑤뒗 sonata�엯�땲�떎." 異쒕젰
 		    console.log('my Car is ' + carName);
 		};
 		//buyCar('sonata');
@@ -75,14 +75,14 @@
 
 		
 		(function(carName) {
-		    // "내가 구매한 차는 sonata입니다." 출력
+		    // "�궡媛� 援щℓ�븳 李⑤뒗 sonata�엯�땲�떎." 異쒕젰
 		    console.log('actually, my car is ' + carName);
 		}('tico'));
 		
 		
-		//Protype 라이브러리 같이 사용할 경우, $변수를 같이 사용하기 때문에 꼬
+		//Protype �씪�씠釉뚮윭由� 媛숈씠 �궗�슜�븷 寃쎌슦, $蹂��닔瑜� 媛숈씠 �궗�슜�븯湲� �븣臾몄뿉 瑗�
 		(function($) {
-		    // 함수 스코프 내에서 $는 jQuery Object임.
+		    // �븿�닔 �뒪肄뷀봽 �궡�뿉�꽌 $�뒗 jQuery Object�엫.
 		    console.log($);
 		}(JQuery));
 		
